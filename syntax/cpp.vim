@@ -25,7 +25,7 @@ syn keyword cppSTL		abort abs accumulate acos adjacent_difference adjacent_find 
 
 syn keyword cppStatement	new delete this friend using
 syn keyword cppAccess		public protected private
-syn keyword cppType		inline virtual explicit export bool wchar_t
+syn keyword cppType		inline virtual explicit export bool wchar_t alignas alignof constexpr decltype noexcept static_assert thread_local
 syn keyword cppExceptions	throw try catch
 syn keyword cppOperator		operator typeid
 syn keyword cppOperator		and bitor or xor compl bitand and_eq or_eq xor_eq not not_eq
