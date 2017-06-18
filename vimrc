@@ -476,39 +476,39 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'Yggdroot/indentLine'
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'Yggdroot/indentLine'
 let g:indentLine_char = '┊'
 "ndle 'tpope/vim-rails.git'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
 " non github repos
-Bundle 'https://github.com/wincent/command-t.git'
-Bundle 'Auto-Pairs'
-Bundle 'python-imports.vim'
-Bundle 'CaptureClipboard'
-Bundle 'ctrlp-modified.vim'
-Bundle 'last_edit_marker.vim'
-Bundle 'synmark.vim'
-Bundle 'Python-mode-klen'
-Bundle 'SQLComplete.vim'
+"Bundle 'https://github.com/wincent/command-t.git'
+"Bundle 'Auto-Pairs'
+"Bundle 'python-imports.vim'
+"Bundle 'CaptureClipboard'
+"Bundle 'ctrlp-modified.vim'
+"Bundle 'last_edit_marker.vim'
+"Bundle 'synmark.vim'
+"Bundle 'Python-mode-klen'
+"Bundle 'SQLComplete.vim'
 "Bundle 'Javascript-OmniCompletion-with-YUI-and-j'
 "Bundle 'JavaScript-Indent'
 "Bundle 'Better-Javascript-Indentation'
 
 "Bundle 'jslint.vim'
 "Bundle "pangloss/vim-javascript"
-Bundle 'Vim-Script-Updater'
-Bundle 'ctrlp.vim'
-Bundle 'tacahiroy/ctrlp-funky'
+"Bundle 'Vim-Script-Updater'
+"Bundle 'ctrlp.vim'
+"Bundle 'tacahiroy/ctrlp-funky'
 "Bundle 'jsbeautify'
-Bundle 'The-NERD-Commenter'
+"Bundle 'The-NERD-Commenter'
 "django
 "Bundle 'django_templates.vim'
 "Bundle 'Django-Projects'
-Bundle 'FredKSchott/CoVim'
+"Bundle 'FredKSchott/CoVim'
 "Bundle 'djangojump'
 
 filetype plugin indent on     " required!
