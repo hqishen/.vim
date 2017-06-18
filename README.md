@@ -19,3 +19,19 @@
     3、在.vimrc文件中添加Bundle对该插件的管理语句”Bundle'XXX' ”，XXX为插件在候选插件列表中的名字
     4、可以使用bundle提供的命令对安装的插件集进行管理
 
+## installation plugin name：
+          'Auto-Pairs'
+          'python-imports.vim'
+          'CaptureClipboard'
+          'cpp.vim'
+          'EditPlus'
+          'indentpython.vim'
+          'python_fold_compact'
+          'python-imports.vim'
+          'Python-Syntax'
+          'Python-Syntax-Folding'
+          'synmark.vim'
+          'vim-cpp-auto-include'
+          'vim-ipython'
+          'youdao.dict'
+          'ctrlp.vim'
