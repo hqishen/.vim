@@ -113,14 +113,29 @@ autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()"
 ""定义函数SetTitle，自动插入文件头 
 func SetTitle() 
     "如果文件类型为.sh文件 
-    if &filetype == 'sh' 
+    if expand("%:e") == 'sh' 
         call setline(1,"\#!/bin/bash") 
-        call append(line("."), "") 
-    elseif &filetype == 'python'
+        call setline(2,"#*************************************************") 
+        call setline(3,"#**********File Name:")
+        call setline(4,"#**********Function :")
+        call setline(5,"#**********Author   :Jertor")
+        call setline(6,"#**********Email    :hqishen@126.com")
+        call setline(7,"#*************************************************") 
+        call append(line(".")+8, "") 
+    elseif expand("%:e") == 'py'
         call setline(1,"#!/usr/bin/env python")
-        call append(line("."),"# coding=utf-8")
-        call append(line(".")+1, "") 
-    elseif &filetype == 'ruby'
+        call append(line("."),"#!--- coding=utf-8 ---*/")
+        call append(line(".")+1,"'''***************************************************")
+        call append(line(".")+2, " > File Name   : ".expand("%")) 
+        call append(line(".")+3, " > Company     : Huizhou Desay SV Automotive ") 
+        call append(line(".")+4, " > Unit        : Central Techonlogy ") 
+        call append(line(".")+5, " > Created Time: ".strftime("%c")) 
+        call append(line(".")+6, " > Function    : " ) 
+        call append(line(".")+7, " > Author      : Jertor " ) 
+        call append(line(".")+8, " > Email       : hqishen@126.com" ) 
+        call append(line(".")+9,"***************************************************'''")
+        call append(line(".")+10, "") 
+    elseif expand("%:e") == 'ruby'
         call setline(1,"#!/usr/bin/env ruby")
         call append(line("."),"# encoding: utf-8")
         call append(line(".")+1, "")
@@ -498,7 +513,7 @@ Bundle 'Python-Syntax'
 Bundle 'Python-Syntax-Folding'
 Bundle 'synmark.vim'
 Bundle 'vim-cpp-auto-include'
-Bundle 'vim-ipython'
+"Bundle 'vim-ipython'
 Bundle 'youdao.dict'
 Bundle 'ctrlp.vim'
 "Bundle 'Python-mode-klen'
