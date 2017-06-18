@@ -3,7 +3,7 @@
 
 1】 ### 首先保证安装了git
 
-2】  ### 然后， 安装Bundle：gitclone https://github.com/gmarik/vundle.git~/.vim/bundle/vundle
+2】  ### 然后， 安装Bundle：git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 3】 然后配置.vimrc 
         setrtp+=~/.vim/bundle/vundle/  
