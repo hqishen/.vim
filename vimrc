@@ -36,12 +36,16 @@ set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提�
 set go=             " 不要图形按钮  
 "color desert     " 设置背景主题  
 "color ron     " 设置背景主题  
+"set background=dark
 color torte     " 设置背景主题  
 "color miko 
+"colorscheme solarized
 "colorscheme google 
-"
-"
-"
+colorscheme desert
+"colorscheme molokai 
+"colorscheme NeoSolarized
+"ctermfg=NONE
+
 "set guifont=Courier_New:h10:cANSI   " 设置字体  
 "autocmd InsertLeave * se nocul  " 用浅色高亮当前行  
 autocmd InsertEnter * se cul    " 用浅色高亮当前行  
@@ -69,6 +73,8 @@ set softtabstop=4
 set shiftwidth=4
 " 使用空格代替制表符
 set expandtab
+"set noexpandtab
+"%retab!
 " 在行和段开始处使用制表符
 set smarttab
 " 显示行号
@@ -333,13 +339,18 @@ nmap <F7>  :TrinityToggleAll<CR>
 " Open and close the Source Explorer separately 
 nmap <F8>  :TrinityToggleSourceExplorer<CR> 
 
-" Open and close the Taglist separately 
-nmap <F9> :TrinityToggleTagList<CR> 
 
 " Open and close the NERD Tree separately 
 nmap <F3> :TrinityToggleNERDTree<CR> 
 
+let Tlist_Inc_Winwidth=0        "                  //  配置打开函数列表的时候不改变窗口大小
+let Tlist_Use_Right_Window=1    "            //  配置函数列表挂靠在屏幕右手边
+let Tlist_File_Fold_Auto_Close=1  "          //  配置自动关闭非活动的文件
+let Tlist_Exit_OnlyWindow=1        "           //  配置当前只有函数列表窗口的时候退出vim
+"map <F4> :TlistToggle<CR>
+nmap <F9> :TrinityToggleTagList<CR> 
 
+"           // 快捷键F4切换函数列表
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -369,7 +380,7 @@ set clipboard+=unnamed
 "自动保存
 set autowrite
 "set ruler                   " 打开状态栏标尺
-"set cursorline              " 突出显示当前行
+set cursorline              " 突出显示当前行
 set magic                   " 设置魔术
 set guioptions-=T           " 隐藏工具栏
 set guioptions-=m           " 隐藏菜单栏
@@ -512,7 +523,7 @@ Bundle 'python_fold_compact'
 Bundle 'Python-Syntax'
 Bundle 'Python-Syntax-Folding'
 Bundle 'synmark.vim'
-Bundle 'vim-cpp-auto-include'
+"Bundle 'vim-cpp-auto-include'
 "Bundle 'vim-ipython'
 Bundle 'youdao.dict'
 Bundle 'ctrlp.vim'
@@ -558,6 +569,8 @@ function! Mosh_Flip_Ext()
 endfun
 map <F2> :call Mosh_Flip_Ext()<CR>
 
+"add scheme
+
 "colorscheme cpp
 "解決右鍵不能複製粘貼問題
 "if has('mouse')
@@ -569,3 +582,4 @@ map <F2> :call Mosh_Flip_Ext()<CR>
 "set foldnestmax=2   " 设置最大折叠深度
 highlight Comment ctermfg=DarkGrey guifg=blue
 hi Search term=standout ctermfg=0 ctermbg=yellow
+
