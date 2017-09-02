@@ -583,3 +583,25 @@ map <F2> :call Mosh_Flip_Ext()<CR>
 highlight Comment ctermfg=DarkGrey guifg=blue
 hi Search term=standout ctermfg=0 ctermbg=yellow
 
+" 主题 solarized
+Bundle 'altercation/vim-colors-solarized'
+"let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+" 主题 molokai
+Bundle 'tomasr/molokai'
+let g:molokai_original = 1
+" 配色方案
+set background=dark
+set t_Co=256
+if has('gui_running') 
+    colorscheme solarized
+    "colorscheme molokai
+    "colorscheme phd
+else
+    "colorscheme solarized
+    colorscheme molokai
+    "colorscheme phd
+endif
+
