@@ -49,3 +49,40 @@
           'vim-ipython'
           'youdao.dict'
           'ctrlp.vim'
+          'tagbar '用于显示类的各种信息
+          'vim-easymotion' "快速跳转插件"
+          'vim-trailing-whitespace' "标红最后一个空格"
+          'matchit' "括号快速匹配和跳转 快捷键：%"
+          'nerdcommenter' "快速加减注释 "
+            ""<leader>cc，注释当前选中文本，如果选中的是整行则在每行首添加 //，如果选中
+            ""一行的部分内容则在选中部分前后添加分别 /、/；
+            ""<leader>cu，取消选中文本块的注释。
+          'tabular' "自动对齐功能"
+
+## ctrlp 插件
+### 它可以在当前文件夹下面搜索自己想要的东西，打开方式是“ctrl + p”
+
+
+
+## 统计快捷键
+
+    F1
+    F2
+    F3 打开和关闭nerdTree 文件树
+    F4
+    F5 用于编译
+    F6 用于调试程序
+    F7
+    F8
+    F9 用于打开或者是关闭taglist
+
+    在打开了文件后可以在normal模式下\tb可以打开tagbar
+    ctrl + p 可以搜索文件
+
+
+
+
+
+
+## 更多配置详情
+    http://www.cnblogs.com/zhongcq/p/3642794.html#toc_1.2

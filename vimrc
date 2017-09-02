@@ -9,21 +9,12 @@ set sm
 set selection=inclusive
 set wildmenu
 set mousemodel=popup
-"au FileType php setlocal dict+=~/.vim/dict/php_funclist.dict
-"au FileType css setlocal dict+=~/.vim/dict/css.dict
 au FileType c setlocal dict+=~/.vim/dict/c.dict
 au FileType cpp setlocal dict+=~/.vim/dict/cpp.dict
-"jau FileType scale setlocal dict+=~/.vim/dict/scale.dict
-"au FileType javascript setlocal dict+=~/.vim/dict/javascript.dict
-"au FileType html setlocal dict+=~/.vim/dict/javascript.dict
-"au FileType html setlocal dict+=~/.vim/dict/css.dict
-"
+
 "syntastic相关
 execute pathogen#infect()
 let g:syntastic_python_checkers=['pylint']
-"let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-"golang
-"Processing... % (ctrl+c to stop)
 let g:fencview_autodetect=0
 set rtp+=$GOROOT/misc/vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,19 +25,11 @@ set cul "高亮光标所在行
 set cuc
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示  
 set go=             " 不要图形按钮  
-"color desert     " 设置背景主题  
-"color ron     " 设置背景主题  
-"set background=dark
-color torte     " 设置背景主题  
-"color miko 
-"colorscheme solarized
-"colorscheme google 
-colorscheme desert
 "colorscheme molokai 
 "colorscheme NeoSolarized
 "ctermfg=NONE
 
-"set guifont=Courier_New:h10:cANSI   " 设置字体  
+set guifont=Courier_New:h10:cANSI   " 设置字体  
 "autocmd InsertLeave * se nocul  " 用浅色高亮当前行  
 autocmd InsertEnter * se cul    " 用浅色高亮当前行  
 set ruler           " 显示标尺  
@@ -124,7 +107,7 @@ func SetTitle()
         call setline(2,"#*************************************************") 
         call setline(3,"#**********File Name:")
         call setline(4,"#**********Function :")
-        call setline(5,"#**********Author   :Jertor")
+        call setline(5,"#**********Author   :Jason")
         call setline(6,"#**********Email    :hqishen@126.com")
         call setline(7,"#*************************************************") 
         call append(line(".")+8, "") 
@@ -137,7 +120,7 @@ func SetTitle()
         call append(line(".")+4, " > Unit        : Central Techonlogy ") 
         call append(line(".")+5, " > Created Time: ".strftime("%c")) 
         call append(line(".")+6, " > Function    : " ) 
-        call append(line(".")+7, " > Author      : Jertor " ) 
+        call append(line(".")+7, " > Author      : Jason" ) 
         call append(line(".")+8, " > Email       : hqishen@126.com" ) 
         call append(line(".")+9,"***************************************************'''")
         call append(line(".")+10, "") 
@@ -158,12 +141,12 @@ func SetTitle()
         call append(line(".")+6, "")
     endif
     if expand("%:e") == 'cpp'
-        call append(line(".")+7, "#include<iostream>")
+        call append(line(".")+7, "#include <iostream>")
         call append(line(".")+8, "using namespace std;")
         call append(line(".")+9, "")
     endif
     if &filetype == 'c'
-        call append(line(".")+7, "#include<stdio.h>")
+        call append(line(".")+7, "#include <stdio.h>")
         call append(line(".")+8, "")
     endif
     if expand("%:e") == 'h'
@@ -292,7 +275,6 @@ nmap <F8> :SrcExplToggle<CR>
 
 " // Set the height of Source Explorer window 
 let g:SrcExpl_winHeight = 20 
-
 " // Set 100 ms for refreshing the Source Explorer 
 let g:SrcExpl_refreshTime = 100 
 
@@ -419,23 +401,6 @@ set showmatch
 set matchtime=1
 " 光标移动到buffer的顶部和底部时保持3行距离
 set scrolloff=3
-" 为C程序提供自动缩进
-"自动补全
-"":inoremap ( ()<ESC>i
-"":inoremap ) <c-r>=ClosePair(')')<CR>
-":inoremap { {<CR>}<ESC>O
-":inoremap } <c-r>=ClosePair('}')<CR>
-"":inoremap [ []<ESC>i
-"":inoremap ] <c-r>=ClosePair(']')<CR>
-"":inoremap " ""<ESC>i
-"":inoremap ' ''<ESC>i
-""function! ClosePair(char)
-""	if getline('.')[col('.') - 1] == a:char
-""		return "\<Right>"
-""	else
-""		return a:char
-""	endif
-""endfunction
 filetype plugin indent on 
 "打开文件类型检测, 加了这句才可以用智能补全
 set completeopt=longest,menu
@@ -496,22 +461,8 @@ filetype off                   " required!
 "
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-" let Vundle manage Vundle
-" required! 
 Bundle 'gmarik/vundle'
-" My Bundles here:
-"
-" original repos on github
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'Yggdroot/indentLine'
 let g:indentLine_char = '┊'
-"ndle 'tpope/vim-rails.git'
-" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-" non github repos
-"Bundle 'https://github.com/wincent/command-t.git'
 Bundle 'Auto-Pairs'
 Bundle 'python-imports.vim'
 Bundle 'CaptureClipboard'
@@ -519,34 +470,15 @@ Bundle 'cpp.vim'
 Bundle 'EditPlus'
 Bundle 'indentpython.vim'
 Bundle 'python_fold_compact'
-"Bundle 'python-imports.vim'
 Bundle 'Python-Syntax'
 Bundle 'Python-Syntax-Folding'
 Bundle 'synmark.vim'
-"Bundle 'vim-cpp-auto-include'
-"Bundle 'vim-ipython'
 Bundle 'youdao.dict'
 Bundle 'ctrlp.vim'
-"Bundle 'Python-mode-klen'
-"Bundle 'SQLComplete.vim'
-"Bundle 'Javascript-OmniCompletion-with-YUI-and-j'
-"Bundle 'JavaScript-Indent'
-"Bundle 'Better-Javascript-Indentation'
-
-"Bundle 'jslint.vim'
-"Bundle 'Vim-Script-Updater'
-"Bundle 'tacahiroy/ctrlp-funky'
-"Bundle 'jsbeautify'
-"Bundle 'The-NERD-Commenter'
-"django
-"Bundle 'django_templates.vim'
-"Bundle 'Django-Projects'
-"Bundle 'FredKSchott/CoVim'
-"Bundle 'djangojump'
 
 filetype plugin indent on     " required!
 "
-"ctrlp设置
+"ctrlp设置 用于查找文件，打开方式是ctrl+p
 "
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.png,*.jpg,*.gif     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.pyc,*.png,*.jpg,*.gif  " Windows
@@ -569,7 +501,6 @@ function! Mosh_Flip_Ext()
 endfun
 map <F2> :call Mosh_Flip_Ext()<CR>
 
-"add scheme
 
 "colorscheme cpp
 "解決右鍵不能複製粘貼問題
@@ -592,8 +523,8 @@ let g:solarized_visibility="normal"
 " 主题 molokai
 Bundle 'tomasr/molokai'
 let g:molokai_original = 1
+" 配色方案 不同的模式有不同的效果哦
 " 配色方案
-set background=dark
 set t_Co=256
 if has('gui_running') 
     colorscheme solarized
@@ -604,4 +535,32 @@ else
     colorscheme molokai
     "colorscheme phd
 endif
+
+"add tagbar plugin'
+Bundle 'majutsushi/tagbar'
+nmap <leader> tb :TagbarToggle<CR> "\tb 打开tagbar窗口"
+let g:tagbar_autofocus = 1
+
+"add for show no user whitespaces
+Bundle 'bronson/vim-trailing-whitespace'
+map<leader><space> :FixWhitespace<cr> "\+space 去掉去掉空格"
+
+" add vim -easymotion 快速跳转
+Bundle 'Lokaltog/vim-easymotion'
+
+" add matchi.vim 括号快速匹配和跳转
+Bundle 'vim-scripts/matchit.zip'
+
+" add nerdcommenter 快速加减注视
+Bundle 'scrooloose/nerdcommenter'
+let NERDSpaceDelims = 1
+
+
+"add tablular 代码对齐
+"for code alignment
+Bundle 'godlygeek/tabular'
+" \bb                 按=号对齐代码 [Tabular插件]
+nmap <leader>bb :Tab /=<CR>
+" \bn                 自定义对齐    [Tabular插件]
+nmap <leader>bn :Tab /
 
