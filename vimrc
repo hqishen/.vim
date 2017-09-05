@@ -18,29 +18,29 @@ let g:syntastic_python_checkers=['pylint']
 let g:fencview_autodetect=0
 set rtp+=$GOROOT/misc/vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 显示相关  
+" 显示相关
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 set cul "高亮光标所在行
 set cuc
-set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示  
-set go=             " 不要图形按钮  
-"colorscheme molokai 
+set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示
+set go=             " 不要图形按钮
+"colorscheme molokai
 "colorscheme NeoSolarized
 "ctermfg=NONE
 
-set guifont=Courier_New:h10:cANSI   " 设置字体  
-"autocmd InsertLeave * se nocul  " 用浅色高亮当前行  
-autocmd InsertEnter * se cul    " 用浅色高亮当前行  
-set ruler           " 显示标尺  
-set showcmd         " 输入的命令显示出来，看的清楚些  
-"set whichwrap+=<,>,h,l   " 允许backspace和光标键跨越行边界(不建议)  
-set scrolloff=3     " 光标移动到buffer的顶部和底部时保持3行距离  
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容  
-set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)  
-set foldenable      " 允许折叠  
-set foldmethod=manual   " 手动折叠  
-set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
+set guifont=Courier_New:h10:cANSI   " 设置字体
+"autocmd InsertLeave * se nocul  " 用浅色高亮当前行
+autocmd InsertEnter * se cul    " 用浅色高亮当前行
+set ruler           " 显示标尺
+set showcmd         " 输入的命令显示出来，看的清楚些
+"set whichwrap+=<,>,h,l   " 允许backspace和光标键跨越行边界(不建议)
+set scrolloff=3     " 光标移动到buffer的顶部和底部时保持3行距离
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容
+set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)
+set foldenable      " 允许折叠
+set foldmethod=manual   " 手动折叠
+set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
 " 显示中文帮助
 if version >= 603
     set helplang=cn
@@ -87,7 +87,7 @@ set iskeyword+=_,$,@,%,#,-
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd
 au BufRead,BufNewFile *.{go}   set filetype=go
 "au BufRead,BufNewFile *.{js}   set filetype=javascript
-"rkdown to HTML  
+"rkdown to HTML
 nmap md :!~/.vim/markdown.pl % > %.html <CR><CR>
 nmap fi :!firefox %.html & <CR><CR>
 nmap \ \cc
@@ -97,47 +97,47 @@ nmap tt :%s/\t/    /g<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""新文件标题
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"新建.c,.h,.sh,.java文件，自动插入文件头 
-autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()" 
-""定义函数SetTitle，自动插入文件头 
-func SetTitle() 
-    "如果文件类型为.sh文件 
-    if expand("%:e") == 'sh' 
-        call setline(1,"\#!/bin/bash") 
-        call setline(2,"#*************************************************") 
+"新建.c,.h,.sh,.java文件，自动插入文件头
+autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()"
+""定义函数SetTitle，自动插入文件头
+func SetTitle()
+    "如果文件类型为.sh文件
+    if expand("%:e") == 'sh'
+        call setline(1,"\#!/bin/bash")
+        call setline(2,"#*************************************************")
         call setline(3,"#**********File Name:")
         call setline(4,"#**********Function :")
         call setline(5,"#**********Author   :Jason")
         call setline(6,"#**********Email    :hqishen@126.com")
-        call setline(7,"#*************************************************") 
-        call append(line(".")+8, "") 
+        call setline(7,"#*************************************************")
+        call append(line(".")+8, "")
     elseif expand("%:e") == 'py'
         call setline(1,"#!/usr/bin/env python")
         call append(line("."),"#!--- coding=utf-8 ---*/")
         call append(line(".")+1,"'''***************************************************")
-        call append(line(".")+2, " > File Name   : ".expand("%")) 
-        call append(line(".")+3, " > Company     : Huizhou Desay SV Automotive ") 
-        call append(line(".")+4, " > Unit        : Central Techonlogy ") 
-        call append(line(".")+5, " > Created Time: ".strftime("%c")) 
-        call append(line(".")+6, " > Function    : " ) 
-        call append(line(".")+7, " > Author      : Jason" ) 
-        call append(line(".")+8, " > Email       : hqishen@126.com" ) 
+        call append(line(".")+2, " > File Name   : ".expand("%"))
+        call append(line(".")+3, " > Company     : Huizhou Desay SV Automotive ")
+        call append(line(".")+4, " > Unit        : Central Techonlogy ")
+        call append(line(".")+5, " > Created Time: ".strftime("%c"))
+        call append(line(".")+6, " > Function    : " )
+        call append(line(".")+7, " > Author      : Jason" )
+        call append(line(".")+8, " > Email       : hqishen@126.com" )
         call append(line(".")+9,"***************************************************'''")
-        call append(line(".")+10, "") 
+        call append(line(".")+10, "")
     elseif expand("%:e") == 'ruby'
         call setline(1,"#!/usr/bin/env ruby")
         call append(line("."),"# encoding: utf-8")
         call append(line(".")+1, "")
         "    elseif &filetype == 'mkd'
         "        call setline(1,"<head><meta charset=\"UTF-8\"></head>")
-    else 
-        call setline(1, "/*************************************************************************") 
-        call append(line("."), "	> File Name  : ".expand("%")) 
-        call append(line(".")+1, "	> Company    : Huizhou Desay SV Automotive ") 
-        call append(line(".")+2, "	> Unit       : Central Techonlogy ") 
-        call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
-        call append(line(".")+4, "    > Function   : " ) 
-        call append(line(".")+5, " ************************************************************************/") 
+    else
+        call setline(1, "/*************************************************************************")
+        call append(line("."), "	> File Name  : ".expand("%"))
+        call append(line(".")+1, "	> Company    : Huizhou Desay SV Automotive ")
+        call append(line(".")+2, "	> Unit       : Central Techonlogy ")
+        call append(line(".")+3, "	> Created Time: ".strftime("%c"))
+        call append(line(".")+4, "    > Function   : " )
+        call append(line(".")+5, " ************************************************************************/")
         call append(line(".")+6, "")
     endif
     if expand("%:e") == 'cpp'
@@ -159,7 +159,7 @@ func SetTitle()
         call append(line(".")+8,"")
     endif
     "新建文件后，自动定位到文件末尾
-endfunc 
+endfunc
 autocmd BufNewFile * normal G
 
 
@@ -186,20 +186,20 @@ imap <C-e> <Esc>$
 vmap <C-c> "+y
 set mouse=v
 "set clipboard=unnamed
-"去空行  
-nnoremap <F2> :g/^\s*$/d<CR> 
-"比较文件  
-nnoremap <C-F2> :vert diffsplit 
+"去空行
+nnoremap <F2> :g/^\s*$/d<CR>
+"比较文件
+nnoremap <C-F2> :vert diffsplit
 "nnoremap <Leader>fu :CtrlPFunky<Cr>
 "nnoremap <C-n> :CtrlPFunky<Cr>
-"列出当前目录文件  
+"列出当前目录文件
 "
 "
 "
 map <F3> :NERDTreeToggle<CR>
 imap <F3> <ESC> :NERDTreeToggle<CR>
-"打开树状文件目录  
-map <C-F3> \be  
+"打开树状文件目录
+map <C-F3> \be
 :autocmd BufRead,BufNewFile *.dot map <F5> :w<CR>:!dot -Tjpg -o %<.jpg % && eog %<.jpg  <CR><CR> && exec "redr!"
 
 "C，C++ 按F5编译运行
@@ -212,8 +212,8 @@ func! CompileRunGcc()
     elseif &filetype == 'cpp'
         exec "!g++ % -o %< -std=c++11"
         exec "!time ./%<"
-    elseif &filetype == 'java' 
-        exec "!javac %" 
+    elseif &filetype == 'java'
+        exec "!javac %"
         exec "!time java %<"
     elseif &filetype == 'sh'
         :!time bash %
@@ -268,69 +268,69 @@ endfunc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""set Source Explorer 
+"""set Source Explorer
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" // The switch of the Source Explorer 
-nmap <F8> :SrcExplToggle<CR> 
+" // The switch of the Source Explorer
+nmap <F8> :SrcExplToggle<CR>
 
-" // Set the height of Source Explorer window 
-let g:SrcExpl_winHeight = 20 
-" // Set 100 ms for refreshing the Source Explorer 
-let g:SrcExpl_refreshTime = 100 
+" // Set the height of Source Explorer window
+let g:SrcExpl_winHeight = 20
+" // Set 100 ms for refreshing the Source Explorer
+let g:SrcExpl_refreshTime = 100
 
-" // Set "Enter" key to jump into the exact definition context 
-let g:SrcExpl_jumpKey = "<ENTER>" 
+" // Set "Enter" key to jump into the exact definition context
+let g:SrcExpl_jumpKey = "<ENTER>"
 
-" // Set "Space" key for back from the definition context 
-let g:SrcExpl_gobackKey = "<SPACE>" 
+" // Set "Space" key for back from the definition context
+let g:SrcExpl_gobackKey = "<SPACE>"
 
 " // In order to avoid conflicts, the Source Explorer should know what plugins
 " // except itself are using buffers. And you need add their buffer names into
 " // below listaccording to the command ":buffers!"
 let g:SrcExpl_pluginList = [
-           \ "_NERD_tree_", 
+           \ "_NERD_tree_",
            \ "__Tag_List__"
-           \ ] 
-" // Enable/Disable the local definition searching, and note that this is not 
-" // guaranteed to work, the Source Explorer doesn't check the syntax for now. 
-" // It only searches for a match with the keyword according to command 'gd' 
-let g:SrcExpl_searchLocalDef = 1 
+           \ ]
+" // Enable/Disable the local definition searching, and note that this is not
+" // guaranteed to work, the Source Explorer doesn't check the syntax for now.
+" // It only searches for a match with the keyword according to command 'gd'
+let g:SrcExpl_searchLocalDef = 1
 
-" // Do not let the Source Explorer update the tags file when opening 
-let g:SrcExpl_isUpdateTags = 0 
+" // Do not let the Source Explorer update the tags file when opening
+let g:SrcExpl_isUpdateTags = 0
 
-" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to 
-" // create/update the tags file 
-let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
+" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
+" // create/update the tags file
+let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
 
-" // Set "<F12>" key for updating the tags file artificially 
-let g:SrcExpl_updateTagsKey = "<F12>" 
+" // Set "<F12>" key for updating the tags file artificially
+let g:SrcExpl_updateTagsKey = "<F12>"
 
-" // Set "<F3>" key for displaying the previous definition in the jump list 
-let g:SrcExpl_prevDefKey = "<F3>" 
+" // Set "<F3>" key for displaying the previous definition in the jump list
+let g:SrcExpl_prevDefKey = "<F3>"
 
-" // Set "<F4>" key for displaying the next definition in the jump list 
-let g:SrcExpl_nextDefKey = "<F4>" 
+" // Set "<F4>" key for displaying the next definition in the jump list
+let g:SrcExpl_nextDefKey = "<F4>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """set Trinity
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Open and close all the three plugins on the same time 
-nmap <F7>  :TrinityToggleAll<CR> 
+" Open and close all the three plugins on the same time
+nmap <F7>  :TrinityToggleAll<CR>
 
-" Open and close the Source Explorer separately 
-nmap <F8>  :TrinityToggleSourceExplorer<CR> 
+" Open and close the Source Explorer separately
+nmap <F8>  :TrinityToggleSourceExplorer<CR>
 
 
-" Open and close the NERD Tree separately 
-nmap <F3> :TrinityToggleNERDTree<CR> 
+" Open and close the NERD Tree separately
+nmap <F3> :TrinityToggleNERDTree<CR>
 
 let Tlist_Inc_Winwidth=0        "                  //  配置打开函数列表的时候不改变窗口大小
 let Tlist_Use_Right_Window=1    "            //  配置函数列表挂靠在屏幕右手边
 let Tlist_File_Fold_Auto_Close=1  "          //  配置自动关闭非活动的文件
 let Tlist_Exit_OnlyWindow=1        "           //  配置当前只有函数列表窗口的时候退出vim
 "map <F4> :TlistToggle<CR>
-nmap <F9> :TrinityToggleTagList<CR> 
+nmap <F9> :TrinityToggleTagList<CR>
 
 "           // 快捷键F4切换函数列表
 
@@ -351,14 +351,14 @@ let NERDTreeWinPos="right"
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " 设置当文件被改动时自动载入
 set autoread
-" quickfix模式
+" quickfix模式 执行\+space按键，会执行make命令
 autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
-"代码补全 
-set completeopt=preview,menu 
-"允许插件  
+"代码补全
+set completeopt=preview,menu
+"允许插件
 "filetype plugin on
-"共享剪贴板  
-set clipboard+=unnamed 
+"共享剪贴板
+set clipboard+=unnamed
 "自动保存
 set autowrite
 "set ruler                   " 打开状态栏标尺
@@ -367,8 +367,8 @@ set magic                   " 设置魔术
 set guioptions-=T           " 隐藏工具栏
 set guioptions-=m           " 隐藏菜单栏
 ""set foldcolumn=0
-""set foldmethod=indent 
-""set foldlevel=3 
+""set foldmethod=indent
+""set foldlevel=3
 " 不要使用vi的键盘模式，而是vim自己的
 set nocompatible
 " 去掉输入错误的提示声音
@@ -401,45 +401,45 @@ set showmatch
 set matchtime=1
 " 光标移动到buffer的顶部和底部时保持3行距离
 set scrolloff=3
-filetype plugin indent on 
+filetype plugin indent on
 "打开文件类型检测, 加了这句才可以用智能补全
 set completeopt=longest,menu
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CTags的设定  
+" CTags的设定
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let Tlist_Sort_Type = "name"    " 按照名称排序  
-let Tlist_Use_Right_Window = 1  " 在右侧显示窗口  
-let Tlist_Compart_Format = 1    " 压缩方式  
-let Tlist_Exist_OnlyWindow = 1  " 如果只有一个buffer，kill窗口也kill掉buffer  
+let Tlist_Sort_Type = "name"    " 按照名称排序
+let Tlist_Use_Right_Window = 1  " 在右侧显示窗口
+let Tlist_Compart_Format = 1    " 压缩方式
+let Tlist_Exist_OnlyWindow = 1  " 如果只有一个buffer，kill窗口也kill掉buffer
 let Tlist_WinWidth=40 "设置taglist宽度
 "
-let Tlist_File_Fold_Auto_Close = 0  " 不要关闭其他文件的tags  
-let Tlist_Enable_Fold_Column = 0    " 不要显示折叠树  
+let Tlist_File_Fold_Auto_Close = 0  " 不要关闭其他文件的tags
+let Tlist_Enable_Fold_Column = 0    " 不要显示折叠树
 let Tlist_Show_One_File=1            "不同时显示多个文件的tag，只显示当前文件的
-"设置tags  
-set tags=tags;  
-set autochdir 
+"设置tags
+set tags=tags;
+set autochdir
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "其他东东
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"默认打开Taglist 
-let Tlist_Auto_Open=0 
-"""""""""""""""""""""""""""""" 
-"/Tag list (ctags) 
-"""""""""""""""""""""""""""""""" 
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags' 
-let Tlist_Show_One_File = 1 "不同时显示多个文件的tag，只显示当前文件的 
+"默认打开Taglist
+let Tlist_Auto_Open=0
+""""""""""""""""""""""""""""""
+"/Tag list (ctags)
+""""""""""""""""""""""""""""""""
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let Tlist_Show_One_File = 1 "不同时显示多个文件的tag，只显示当前文件的
 let Tlist_File_Fold_Auto_Close = 1
-let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim 
+let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_Use_Right_Window = 1 "在右侧窗口中显示taglist窗口
 " minibufexpl插件的一般设置
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1  
+let g:miniBufExplModSelTarget = 1
 nmap tl :Tlist<cr>
 "python补全
 let g:pydiction_location = '~/.vim/after/complete-dict'
@@ -505,11 +505,11 @@ map <F2> :call Mosh_Flip_Ext()<CR>
 "colorscheme cpp
 "解決右鍵不能複製粘貼問題
 "if has('mouse')
-"    set mouse-=a 
+"    set mouse-=a
 "endif
 "
 "摺疊
-"set foldmethod=syntax  " 设置实用语法方式折叠 
+"set foldmethod=syntax  " 设置实用语法方式折叠
 "set foldnestmax=2   " 设置最大折叠深度
 highlight Comment ctermfg=DarkGrey guifg=blue
 hi Search term=standout ctermfg=0 ctermbg=yellow
@@ -526,7 +526,7 @@ let g:molokai_original = 1
 " 配色方案 不同的模式有不同的效果哦
 " 配色方案
 set t_Co=256
-if has('gui_running') 
+if has('gui_running')
     colorscheme solarized
     "colorscheme molokai
     "colorscheme phd
@@ -538,7 +538,7 @@ endif
 
 "add tagbar plugin'
 Bundle 'majutsushi/tagbar'
-nmap <leader> tb :TagbarToggle<CR> "\tb 打开tagbar窗口"
+nmap<leader>tb :TagbarToggle<CR> "\tb 打开tagbar窗口"
 let g:tagbar_autofocus = 1
 
 "add for show no user whitespaces
@@ -553,14 +553,14 @@ Bundle 'vim-scripts/matchit.zip'
 
 " add nerdcommenter 快速加减注视
 Bundle 'scrooloose/nerdcommenter'
-let NERDSpaceDelims = 1
+let g:NERDSpaceDelims=1
 
 
 "add tablular 代码对齐
 "for code alignment
 Bundle 'godlygeek/tabular'
 " \bb                 按=号对齐代码 [Tabular插件]
-nmap <leader>bb :Tab /=<CR>
+nmap<leader>bb :Tab /=<CR>
 " \bn                 自定义对齐    [Tabular插件]
-nmap <leader>bn :Tab /
+nmap<leader>bn :Tab /
 
