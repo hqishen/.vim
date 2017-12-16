@@ -170,11 +170,11 @@ imap <C-t> <C-q><TAB>
 imap <C-j> <ESC>
 " 选中状态下 Ctrl+c 复制
 "map <C-v> "*pa
+set mouse=v
 imap <C-v> <Esc>"*pa
 imap <C-a> <Esc>^
 imap <C-e> <Esc>$
 vmap <C-c> "+y
-set mouse=v
 
 "
 "map <F3> :NERDTreeToggle<CR>
@@ -262,8 +262,7 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-Bundle 'gmarik/vundle'
+"Bundle 'gmarik/vundle'
 
 Bundle 'Auto-Pairs'
 
@@ -271,6 +270,8 @@ Bundle 'ctrlp.vim'
 
 "Tabular: 自动对齐。
 Bundle 'godlygeek/tabular'
+
+Bundle 'CaptureClipboard'
 
 "按tab健9选择补全"
 Bundle 'SuperTab'
@@ -422,3 +423,5 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 ""set tags+=/home/project/project_1/tags
 ""set tags+=/home/project/project_2/tags
 ""这样，每次打开vim便会自动寻找以上设置的tags文件。另外，可以通过vim中：set tags来查看已设置的tags文件路径。
+"解決右鍵不能複製粘貼問題
+
