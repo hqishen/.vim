@@ -2,11 +2,17 @@
 ## vim config repo
 
 ### 首先还是先保证安装如下软件，再进行其他配置操作 
+
     安装vim8
-    sudo add-apt-repository ppa:jonathonf/vim
-    sudo apt-get update
-    sudo apt-get install vim
+    
+      sudo add-apt-repository ppa:jonathonf/vim
+    
+      sudo apt-get update
+    
+      sudo apt-get install vim
+    
     安装ctags：sudo apt-get install ctags
+    
     安装一些必备程序：sudo apt-get install xclip vim-gnome astyle
 
 
@@ -16,4 +22,4 @@
 
 3】  在vim命令行里执行：BundleInstall
 
-
+4】 在/home/sundae/.vim/bundle/nerdtree/autoload/nerdtree的路径下的文件344行修改把2， 3改成1
