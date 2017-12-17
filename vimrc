@@ -94,26 +94,8 @@ func SetTitle()
     "如果文件类型为.sh文件
     if expand("%:e") == 'sh'
         call setline(1,"\#!/bin/bash")
-        call setline(2,"#*************************************************")
-        call setline(3,"#**********File Name:")
-        call setline(4,"#**********Function :")
-        call setline(5,"#**********Author   :Jason")
-        call setline(6,"#**********Email    :hqishen@126.com")
-        call setline(7,"#*************************************************")
-        call append(line(".")+8, "")
     elseif expand("%:e") == 'py'
         call setline(1,"#!/usr/bin/env python")
-        call append(line("."),"#!--- coding=utf-8 ---*/")
-        call append(line(".")+1,"'''***************************************************")
-        call append(line(".")+2, " > File Name   : ".expand("%"))
-        call append(line(".")+3, " > Company     : Huizhou Desay SV Automotive ")
-        call append(line(".")+4, " > Unit        : Central Techonlogy ")
-        call append(line(".")+5, " > Created Time: ".strftime("%c"))
-        call append(line(".")+6, " > Function    : " )
-        call append(line(".")+7, " > Author      : Jason" )
-        call append(line(".")+8, " > Email       : hqishen@126.com" )
-        call append(line(".")+9,"***************************************************'''")
-        call append(line(".")+10, "")
     elseif expand("%:e") == 'ruby'
         call setline(1,"#!/usr/bin/env ruby")
         call append(line("."),"# encoding: utf-8")
@@ -121,14 +103,7 @@ func SetTitle()
         "    elseif &filetype == 'mkd'
         "        call setline(1,"<head><meta charset=\"UTF-8\"></head>")
     else
-        call setline(1, "/*************************************************************************")
         call append(line("."), "	> File Name  : ".expand("%"))
-        call append(line(".")+1, "	> Company    : Huizhou Desay SV Automotive ")
-        call append(line(".")+2, "	> Unit       : Central Techonlogy ")
-        call append(line(".")+3, "	> Created Time: ".strftime("%c"))
-        call append(line(".")+4, "    > Function   : " )
-        call append(line(".")+5, " ************************************************************************/")
-        call append(line(".")+6, "")
     endif
     if expand("%:e") == 'cpp'
         call append(line(".")+7, "#include <iostream>")
@@ -143,10 +118,6 @@ func SetTitle()
         call append(line(".")+7, "#pragma once")
         "        call append(line(".")+8, "#define _".toupper(expand("%:r"))."_H")
         "        call append(line(".")+9, "#endif")
-    endif
-    if &filetype == 'java'
-        call append(line(".")+7,"public class ".expand("%:r"))
-        call append(line(".")+8,"")
     endif
     "新建文件后，自动定位到文件末尾
 endfunc
@@ -211,7 +182,7 @@ func! CompileRunGcc()
 endfunc
 
 "
-autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
+"autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
 "代码补全
 set completeopt=preview,menu
 "允许插件
