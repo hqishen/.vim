@@ -18,7 +18,7 @@
 
 1】  ### 首先保证安装了git
 
-2】  ### 然后， 安装Bundle：git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+2】  ### 然后， 安装git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 3】  在vim命令行里执行：BundleInstall
 
