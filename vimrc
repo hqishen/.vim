@@ -74,9 +74,11 @@ set cmdheight=2
 filetype on
 " 载入文件类型插件
 filetype plugin on
+
 " 为特定文件类型载入相关缩进文件
 filetype indent on
 " 保存全局变量
+
 set viminfo+=!
 " 带有如下符号的单词不要被换行分割
 set iskeyword+=_,$,@,%,#,-
@@ -84,6 +86,8 @@ set iskeyword+=_,$,@,%,#,-
 
 "将tab替换为空格
 nmap tt :%s/\t/    /g<CR>
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""新文件标题
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -127,7 +131,7 @@ autocmd BufNewFile * normal G
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "键盘命令
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nmap <silent> <F9> <ESC>:Tlist<RETURN>
+":nmap <silent> <F9> <ESC>:Tlist<RETURN>
 " shift tab pages
 map <S-Left> :tabp<CR>
 map <S-Right> :tabn<CR>
@@ -192,9 +196,9 @@ set clipboard+=unnamed
 set autowrite
 "set ruler                   " 打开状态栏标尺
 set cursorline              " 突出显示当前行
-set magic                   " 设置魔术
-set guioptions-=T           " 隐藏工具栏
-set guioptions-=m           " 隐藏菜单栏
+"set magic                   " 设置魔术
+"set guioptions-=T           " 隐藏工具栏
+"set guioptions-=m           " 隐藏菜单栏
 " 在处理未保存或只读文件的时候，弹出确认
 set confirm
 "禁止生成临时文件
@@ -231,53 +235,59 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-"Bundle 'gmarik/vundle'
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 
-Bundle 'Auto-Pairs'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'ctrlp.vim'
+Bundle 'gmarik/vundle'
+
+"Plugin 'Auto-Pairs'
+
+Plugin 'ctrlp.vim'
 
 "Tabular: 自动对齐。
-Bundle 'godlygeek/tabular'
+"Plugin 'godlygeek/tabular'
 
-Bundle 'CaptureClipboard'
-
-"按tab健9选择补全"
-Bundle 'SuperTab'
-
-"Plugin 'NERD_Tree'
-Bundle 'https://github.com/scrooloose/nerdtree'
-
-"Plugin tagbar"
-Bundle 'https://github.com/majutsushi/tagbar'
+"Plugin 'CaptureClipboard'
 
 "按tab健9选择补全"
 "Plugin 'SuperTab'
+
+"Plugin 'NERD_Tree'
+Plugin 'https://github.com/scrooloose/nerdtree'
+
+"Plugin tagbar"
+Plugin 'https://github.com/majutsushi/tagbar'
+
+"按tab健9选择补全"
+"Plugin 'SuperTab'
+"
 "标记无用空格
-Bundle 'bronson/vim-trailing-whitespace'
+Plugin 'bronson/vim-trailing-whitespace'
 
 "窗口管理工具"
 ""Plugin 'WinManager'
 "快速注释工具
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 "cpp .h 间切换
-Bundle 'derekwyatt/vim-fswitch'
-Bundle 'a.vim'
-Bundle 'c.vim'
-"Plugin 'stl.vim'
-Bundle 'stlrefvim'
-Bundle 'cpp.vim'
-Bundle 'https://github.com/Mizuchi/STL-Syntax'
+Plugin 'derekwyatt/vim-fswitch'
+Plugin 'a.vim'
+Plugin 'c.vim'
+Plugin 'stl.vim'
+Plugin 'stlrefvim'
+Plugin 'cpp.vim'
+"Plugin 'https://github.com/Mizuchi/STL-Syntax'
 
 "快速插入代码片段
-Bundle 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-"Plugin 'honza/vim-snippets'
-
+Plugin 'honza/vim-snippets'
+call vundle#end()            " required
 filetype plugin indent on    " required
 
 highlight Comment ctermfg=DarkGrey guifg=blue
