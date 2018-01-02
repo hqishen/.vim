@@ -241,12 +241,10 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-Bundle 'gmarik/vundle'
-
+Plugin 'gmarik/vundle'
 "Plugin 'Auto-Pairs'
 
-Plugin 'ctrlp.vim'
+"Plugin 'ctrlp.vim'
 
 "Tabular: 自动对齐。
 "Plugin 'godlygeek/tabular'
@@ -256,6 +254,7 @@ Plugin 'ctrlp.vim'
 "按tab健9选择补全"
 "Plugin 'SuperTab'
 
+Plugin 'https://github.com/nathanaelkane/vim-indent-guides.git'
 "Plugin 'NERD_Tree'
 Plugin 'https://github.com/scrooloose/nerdtree'
 
@@ -274,11 +273,11 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/nerdcommenter'
 
 "cpp .h 间切换
-Plugin 'derekwyatt/vim-fswitch'
+"Plugin 'derekwyatt/vim-fswitch'
 Plugin 'a.vim'
 Plugin 'c.vim'
-Plugin 'stl.vim'
-Plugin 'stlrefvim'
+"Plugin 'stl.vim'
+"Plugin 'stlrefvim'
 Plugin 'cpp.vim'
 "Plugin 'https://github.com/Mizuchi/STL-Syntax'
 
@@ -286,7 +285,7 @@ Plugin 'cpp.vim'
 "Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -404,5 +403,9 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 ""set tags+=/home/project/project_1/tags
 ""set tags+=/home/project/project_2/tags
 ""这样，每次打开vim便会自动寻找以上设置的tags文件。另外，可以通过vim中：set tags来查看已设置的tags文件路径。
-"解決右鍵不能複製粘貼問題
-
+"解決右鍵不能複製粘貼問題"
+"括号自动对其
+let g:indent_guides_enable_on_vim_startup = 1  " 默认关闭
+let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
+let g:indent_guides_start_level 	  = 2  " 从第二层开始可视化显示缩进
+" \ig 打开/关闭 vim-indent-guides
