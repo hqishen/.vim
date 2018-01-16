@@ -74,7 +74,7 @@ set number
 "set history=1000
 "搜索逐字符高亮
 set hlsearch
-set incsearch
+"set incsearch
 "语言设置
 set langmenu=zh_CN.UTF-8
 set helplang=cn
@@ -159,8 +159,8 @@ autocmd BufNewFile * normal G
 "键盘命令
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shift tab pages
-map <S-Left> :tabp<CR>
-map <S-Right> :tabn<CR>
+"map <S-Left> :tabp<CR>
+"map <S-Right> :tabn<CR>
 map! <C-Z> <Esc>zzi
 map! <C-O> <C-Y>,
 map <C-A> ggVG$"+y
@@ -187,6 +187,8 @@ nnoremap <C-F2> :vert diffsplit
 "列出当前目录文件
 map <F7> :NERDTreeToggle<CR>
 imap <F7> <ESC> :NERDTreeToggle<CR>
+
+
 "打开树状文件目录
 map <C-F3> \be
 :autocmd BufRead,BufNewFile *.dot map <F5> :w<CR>:!dot -Tjpg -o %<.jpg % && eog %<.jpg  <CR><CR> && exec "redr!"
@@ -329,7 +331,7 @@ set completeopt=longest,menu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTags的设定
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let Tlist_Sort_Type = "name"    " 按照名称排序
+"let Tlist_Sort_Type = "name"    " 按照名称排序
 let Tlist_Use_Right_Window = 1  " 在右侧显示窗口
 let Tlist_Compart_Format = 1    " 压缩方式
 let Tlist_Exist_OnlyWindow = 1  " 如果只有一个buffer，kill窗口也kill掉buffer
@@ -354,6 +356,16 @@ let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Exit_OnlyWindow=1        "                //  配置当前只有函数列表窗口的时候退出vim
 let Tlist_Use_Right_Window=1    "                   //  配置函数列表挂靠在屏幕右手边
 let Tlist_Inc_Winwidth=0        "                   //  配置打开函数列表的时候不改变窗口大小
+let Tlist_Use_SingleClick=1
+hi TagListComment       ctermfg=LightBlue       ctermbg=Black
+hi TagListFileName      ctermfg=LightBlue       ctermbg=Black
+hi TagListTitle         ctermfg=LightBlue       ctermbg=Black
+hi TagListTagScope      ctermfg=LightBlue       ctermbg=Black
+hi TagListTagName       ctermfg=LightBlue       ctermbg=Black
+hi Tag                  ctermfg=LightBlue       ctermbg=Black
+
+
+
 " minibufexpl插件的一般设置
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
@@ -445,9 +457,20 @@ if has('gui_running')
 else
     "colorscheme solarized
     colorscheme molokai
+    "colorscheme desert
+    "colorscheme elflord
+    "colorscheme slate
     "colorscheme phd
 endif
 
+
+set t_Co=256
+set background=dark
+
 highlight Comment ctermfg=DarkGrey guifg=blue
 hi Search term=standout ctermfg=0 ctermbg=yellow
+
+hi VertSplit guibg=#31312D guifg=#526A83 ctermfg=White ctermbg=DarkGray  term=none cterm=none gui=none
+hi StatusLineNC guibg=#31312D guifg=#526A83 ctermfg=White ctermbg=DarkGray  term=none cterm=none gui=none
+hi FoldColumn guibg=#31312D guifg=#526A83 ctermfg=green ctermbg=DarkGrey term=none cterm=none gui=none
 
