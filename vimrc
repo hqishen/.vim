@@ -178,6 +178,7 @@ imap <C-a> <Esc>^
 imap <C-e> <Esc>$
 vmap <C-c> "+y
 vmap cc "+y
+
 set mouse=v
 "set clipboard=unnamed
 "去空行
