@@ -46,7 +46,8 @@ set ruler           " 显示标尺
 set showcmd         " 输入的命令显示出来，看的清楚些
 "set whichwrap+=<,>,h,l   " 允许backspace和光标键跨越行边界(不建议)
 set scrolloff=3     " 光标移动到buffer的顶部和底部时保持3行距离
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容
+set statusline=%F "状态行显示的内容
 set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)
 set foldenable      " 允许折叠
 set foldmethod=manual   " 手动折叠
@@ -176,6 +177,7 @@ imap <C-v> <Esc>"*pa
 imap <C-a> <Esc>^
 imap <C-e> <Esc>$
 vmap <C-c> "+y
+vmap cc "+y
 set mouse=v
 "set clipboard=unnamed
 "去空行
@@ -474,3 +476,6 @@ hi VertSplit guibg=#31312D guifg=#526A83 ctermfg=White ctermbg=DarkGray  term=no
 hi StatusLineNC guibg=#31312D guifg=#526A83 ctermfg=White ctermbg=DarkGray  term=none cterm=none gui=none
 hi FoldColumn guibg=#31312D guifg=#526A83 ctermfg=green ctermbg=DarkGrey term=none cterm=none gui=none
 
+"自定义快捷键功能区
+nmap nh <ESC>:noh<CR>
+nmap ff <ESC>/\<<C-R>+\><CR>
