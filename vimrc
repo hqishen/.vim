@@ -177,7 +177,7 @@ imap <C-v> <Esc>"*pa
 imap <C-a> <Esc>^
 imap <C-e> <Esc>$
 vmap <C-c> "+y
-vmap cc "+y
+"vmap cc "+y
 
 set mouse=v
 "set clipboard=unnamed
@@ -479,4 +479,5 @@ hi FoldColumn guibg=#31312D guifg=#526A83 ctermfg=green ctermbg=DarkGrey term=no
 
 "自定义快捷键功能区
 nmap nh <ESC>:noh<CR>
-nmap ff <ESC>/\<<C-R>+\><CR>
+nmap ff <ESC>/\<<C-R>0\><CR>
+nmap cc <ESC>yiw
