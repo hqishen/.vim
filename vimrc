@@ -481,3 +481,5 @@ hi FoldColumn guibg=#31312D guifg=#526A83 ctermfg=green ctermbg=DarkGrey term=no
 nmap nh <ESC>:noh<CR>
 nmap ff <ESC>/\<<C-R>0\><CR>
 nmap cc <ESC>yiw
+
+nmap rM <ESC>:%s/\r//g  " 去掉^M
