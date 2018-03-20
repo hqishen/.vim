@@ -249,3 +249,5 @@ write
 xor
 xor_eq
 nullptr
+recursive_mutex
+lock_guard
