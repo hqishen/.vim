@@ -105,7 +105,7 @@ nmap tt :%s/\t/    /g<CR>
 """""新文件标题
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "新建.c,.h,.sh,.java文件，自动插入文件头
-autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py,*.c exec ":call SetTitle()"
+autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()"
 ""定义函数SetTitle，自动插入文件头
 func SetTitle()
 	"如果文件类型为.sh文件
@@ -486,4 +486,4 @@ nmap nh <ESC>:noh<CR>
 nmap ff <ESC>/\<<C-R>0\><CR>
 nmap cc <ESC>yiw
 
-nmap rM <ESC>:%s/\r//g  " 去掉^M
+nmap dm <ESC>:%s/\r//g <CR> "去掉^M
