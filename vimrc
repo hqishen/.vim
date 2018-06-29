@@ -364,6 +364,7 @@ let Tlist_Exit_OnlyWindow=1        "                //  配置当前只有函数
 let Tlist_Use_Right_Window=1    "                   //  配置函数列表挂靠在屏幕右手边
 let Tlist_Inc_Winwidth=0        "                   //  配置打开函数列表的时候不改变窗口大小
 let Tlist_Use_SingleClick=1
+let Tlist_Ctags_Cmd='/usr/bin/ctags-exuberant'
 hi TagListComment       ctermfg=LightBlue       ctermbg=Black
 hi TagListFileName      ctermfg=LightBlue       ctermbg=Black
 hi TagListTitle         ctermfg=LightBlue       ctermbg=Black
@@ -385,7 +386,6 @@ let g:miniBufExplModSelTarget = 1
 "python补全
 let g:pydiction_location = '~/.vim/after/complete-dict'
 let g:pydiction_menu_height = 20
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
