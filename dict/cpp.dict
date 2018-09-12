@@ -253,3 +253,6 @@ recursive_mutex
 lock_guard
 earse
 move
+explicit
+function
+bind
